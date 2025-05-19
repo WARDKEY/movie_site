@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   alt="..."
                 />
                 <div class="card-body">
-                  <p class="movie_year text-warning">${result.release_date}</p>
+                  <p class="movie_year text-warning">${result.release_date.substring(0, 4)}</p>
                   <p class="movie_title fs-bold">${result.original_title}</p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ function searchMovie() {
                   alt="..."
                 />
                 <div class="card-body">
-                  <p class="movie_year text-warning">${result.release_date}</p>
+                  <p class="movie_year text-warning">${result.release_date.substring(0,4)}</p>
                   <p class="movie_title fs-bold">${result.original_title}</p>
                 </div>
               </div>
