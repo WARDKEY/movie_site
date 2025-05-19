@@ -1,0 +1,13 @@
+ a:hover #movie_card {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #movie_card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar-brand{
+    color: #F89406;
+  }
