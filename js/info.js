@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>`;
 
+  // 선택된 영화 화면에서 Movie 탭 클릭 시 같은 영화 보이게 하는 함수
   $link.addEventListener("click", function () {
-    $link.setAttribute("href", `/info.html?index=${index}`);
+    $link.setAttribute("href", `/info.html?id=${movieId}`);
   });
 });
