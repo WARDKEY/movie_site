@@ -5,10 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const $link = document.getElementById("movie_link");
 
   const param = new URLSearchParams(window.location.search);
-  const index = param.get("index");
+  const movieId = param.get("id");
 
   const movies = movieList.results;
-  const selectedMovie = movies[index];
+  let selectedMovie;
+
+  selectedMovie = movies.find((m) => String(m.id) === movieId);
+
   console.log(selectedMovie);
 
   $container.innerHTML = ` <div class="col mt-5" id="movie_image">
@@ -21,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="movie_info">
             <h1 class="text-light" id="movie_title">${selectedMovie.original_title}</h1>
             </br>
-            <div class="text-warning mb-3" id="realese_date">
+            <div class="text-warning mb-3" id="release_date">
               <h3>개봉일</h3>
                 <p>${selectedMovie.release_date}</p>
             </div>
