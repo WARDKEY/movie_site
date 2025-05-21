@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const movies = movieList.results;
 
+  renderPage(movies, $cardList);
+});
+
+// 전체 영화 불러옴
+function renderPage(movies, $cardList) {
   for (let result of movies) {
     const $col = document.createElement("div");
     $col.classList.add("col");
@@ -37,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>`;
     $cardList.appendChild($col);
   }
-});
+}
 
 // 검색 창
 function searchMovie() {
@@ -67,6 +72,11 @@ function searchMovie() {
     }
   }
 
+  renderSearchPage(searchMovies, $cardList);
+}
+
+// 검색된 영화 불러옴
+function renderSearchPage(searchMovies, $cardList) {
   for (let result of searchMovies) {
     const $col = document.createElement("div");
     $col.classList.add("col");

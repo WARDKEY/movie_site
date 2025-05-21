@@ -15,25 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const genreId = selectedMovie.genre_ids;
   const genresArr = [];
 
-  for (let genre of genres) {
-    for (let id of genreId) {
-      if (genre.id === id) {
-        genresArr.push(genre.name);
-      }
-    }
-  }
+  genreFilter(genreId, genresArr);
 
   let movieGenre = "";
 
-  for (let gen of genresArr) {
-    movieGenre += gen + " ";
-  }
-
-  console.log(movieGenre);
-
-  console.log(genresArr);
-
-  console.log(selectedMovie);
+  movieGenre = formatGenre(genresArr, movieGenre);
 
   $container.innerHTML = ` <div class="col mt-5" id="movie_image">
           <img
@@ -70,6 +56,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // 선택된 영화 화면에서 Movie 탭 클릭 시 같은 영화 보이게 하는 함수
   tabClick($link, movieId);
 });
+
+// 배열 장르 문자열로 변환
+function formatGenre(genresArr, movieGenre) {
+  for (let gen of genresArr) {
+    movieGenre += gen + " ";
+  }
+  return movieGenre;
+}
+
+// 장르 id에 맞는 장르 필터링
+function genreFilter(genreId, genresArr) {
+  for (let genre of genres) {
+    for (let id of genreId) {
+      if (genre.id === id) {
+        genresArr.push(genre.name);
+      }
+    }
+  }
+}
 
 function tabClick($link, movieId) {
   $link.addEventListener("click", function () {
