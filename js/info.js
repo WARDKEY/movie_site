@@ -42,7 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>`;
 
   // 선택된 영화 화면에서 Movie 탭 클릭 시 같은 영화 보이게 하는 함수
+  tabClick($link, movieId);
+});
+
+function tabClick($link, movieId) {
   $link.addEventListener("click", function () {
     $link.setAttribute("href", `/info.html?id=${movieId}`);
   });
-});
+}
