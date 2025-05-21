@@ -12,6 +12,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   selectedMovie = movies.find((m) => String(m.id) === movieId);
 
+  const genreId = selectedMovie.genre_ids;
+  const genresArr = [];
+
+  for (let genre of genres) {
+    for (let id of genreId) {
+      if (genre.id === id) {
+        genresArr.push(genre.name);
+      }
+    }
+  }
+
+  let movieGenre = "";
+
+  for (let gen of genresArr) {
+    movieGenre += gen + " ";
+  }
+
+  console.log(movieGenre);
+
+  console.log(genresArr);
+
   console.log(selectedMovie);
 
   $container.innerHTML = ` <div class="col mt-5" id="movie_image">
@@ -34,6 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${selectedMovie.popularity}</p>
             </div>
             <div class="mb-3" id="overview">
+            </br>
+            <div class="mb-3" id="popularity">
+              <h3 class="text-light">장르</h3>
+                <p>${movieGenre}</p>
+            </div>
             </br>
               <h3 class="text-light">설명</h3>
                 <p>${selectedMovie.overview}</p>
