@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   movieGenre = formatGenre(genresArr, movieGenre);
 
-  $container.innerHTML = ` <div class="col mt-5" id="movie_image">
+  $container.innerHTML = `<div class="row"> <div class=" col mt-5" id="movie_image">
           <img
             src="https://image.tmdb.org/t/p/w440_and_h660_face/${selectedMovie.poster_path}"
             alt=""
           />
         </div>
-        <div class="col mt-5">
+        <div class=" col mt-5">
           <div class="movie_info">
             <h1 class="text-light" id="movie_title">${selectedMovie.original_title}</h1>
             </br>
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>${selectedMovie.overview}</p>
             </div>
           </div>
+        </div>
         </div>`;
 
   // 선택된 영화 화면에서 Movie 탭 클릭 시 같은 영화 보이게 하는 함수
